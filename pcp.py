@@ -10,7 +10,7 @@ os.system('cls' if os.name == 'nt' else 'clear')
 # 70 001#0 01#011 01#101 10#001
 
 print("Please specify the number of iterations you want to make and list the dominos to be used.")
-print("Top and bottom rows are divieded by a #.")
+print("Top and bottom rows of each domino are divided by a #.")
 print("Example: 6 1#101 10#00 011#11")
 inp = input("Input: ").split()
 
@@ -40,7 +40,7 @@ def pcp():
     # (1) create a solutions list
     solutions = []
     for i in range(0, n):
-        print(f"Domino 1: {dominos[i]}")
+        print(f"Domino {i}: {dominos[i]}")
         xi = dominos[i][0]
         yi = dominos[i][1]
         if (xi == yi):
@@ -101,11 +101,14 @@ if (res != []):
     print("Solution to this pcp: " + str(res))
     xlist = ""
     ylist = ""
+    indexes = []
     for domino in res:
         xlist += domino[0]
         ylist += domino[1]
+        indexes.append(dominos.index(domino))
     print(f"{xlist} <--- top row")
     print(f"{ylist} <--- bottom row")
+    print(f"The following dominos were used (indexes): {str(indexes)}")
 else:
     print("Could not find a solution for this pcp. Try with more iterations...")
 
