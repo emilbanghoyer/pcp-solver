@@ -14,9 +14,8 @@ print("Top and bottom rows of each domino are divided by a #.")
 print("Example: 6 1#101 10#00 011#11")
 inp = input("Input: ").split()
 
+# clear the terminal
 os.system('cls' if os.name == 'nt' else 'clear')
-
-# inp = '6 1#101 10#00 011#11'.split()
 
 # k = number of iterations
 k = int(inp[0])
@@ -51,8 +50,6 @@ def pcp():
         if (len(yi) < len(xi)):
             if (xi[:len(yi)] == yi):
                 solutions.append([dominos[i]])
-
-    # print("Dominos that can be used first: " + str(solutions))
 
     # (2) loop through each iteration k
     for i in range(k):
